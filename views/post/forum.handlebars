@@ -1,0 +1,25 @@
+ {{{body}}}
+<div class="forum">
+    <div class="tittle-container">
+        <h2>Fórum</h2>
+        <a href="/post/add" class="btn">Publicar</a>
+       
+    </div>
+    <h3>Seus Pensamentos: </h3>
+    <a href="/blog/meditacao"> Meditação</a>
+    <ul>
+        {{#each posts}}
+            <li>
+                <span class="label">{{this.conteudo}} </span>
+                <span class="actions">
+                    <form action="/post/remove" method="POST">
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <input type="submit" class="btn" value="Excluir">
+                    </form>
+                </span>
+            </li>
+        {{/each}}
+    </ul>
+    
+</div> 
+
